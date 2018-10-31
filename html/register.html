@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小米账号-注册</title>
+		<style>
+			body{
+				background-color: #f5f5f5;
+			}
+			#login{
+				width: 854px;
+				height: 624px;
+				background-color: white;
+				margin: 0 auto;
+				margin-top: 20px;
+				overflow: hidden;
+			}
+			#foot{
+				width: 568px;
+				height: 54px;
+				margin: 0 auto;
+				/*background-color: yellow;*/
+				margin-top: 42px; 
+			}
+			#foot_p1{
+				font-size: 14px;
+				color: #9e9d9c;
+				text-align: center;
+			}
+			#foot_p1 a{
+				
+				font-size: 14px;
+				color: #9e9d9c;
+				margin: 0 9px;
+				text-decoration: none;
+			}
+			#foot_p2{
+				font-size: 11px;
+				color: #9e9d9c;
+				text-align: center;
+				margin-top: 10px;
+			}
+
+			#mi_logo{
+				display: block;
+				margin: 0 auto;
+			}
+			#title{
+				display: block;
+				font-size: 29px;
+				text-align: center;
+				margin-top: 48px;
+			}
+			#register_info{
+				width: 337px;
+				height: 246px;
+				/*background-color: pink;*/
+				margin: 0 auto;
+				margin-top: 39px;
+			}
+			#register_info span{
+				font-size: 14px;
+			}
+			#select_county{
+				width: 332px;
+				height: 42px;
+				/*border: 0;*/
+				outline: 0;
+				margin-top: 10px;
+			}
+			#select_county option{
+				height: 42px;
+			}
+			#register_info b{
+				display: block;
+				margin-top: 8px;
+				font-weight: normal;
+				font-size: 13px;
+				color: #a5a5a5;
+			}
+			#tel_num{
+				display: block;
+				margin-top: 20px;
+			}
+			#tel_num_info{
+				display: block;
+				font-size: 0px;
+				border: 1px solid #efefef;
+				width: 332px;
+				height: 42px;
+				margin-top: 8px;
+			}
+			#tel_num_info select{
+				border: 0;
+				outline: 0;
+				width: 73px;
+				height: 42px;
+				border-right: 1px solid #efefef;
+				
+			}
+			#tel_num_info input{
+				width: 256px;
+				height: 42px;
+				border: 0;
+				outline: 0;
+				text-indent: 1em;
+			}
+			#register_info button{
+				width: 332px;
+				height: 42px;
+				background-color: #ff6700;
+				border: 0;
+				outline: 0;
+				color: white;
+				margin-top: 31px;
+			}
+			#register_info button:hover{
+				background-color: #ff936a;
+			}
+			#protocol{
+				font-size: 14px;
+				color: #d1d1d1;
+				text-align: center;
+				margin-top: 84px;
+			}
+			#protocol img{
+				vertical-align: middle;
+			}
+			/*#protocol b{
+				font-weight: normal;
+			}*/
+			#protocol a{
+				text-decoration: none;
+				color: black;
+			}
+			
+		</style>
+		<link rel="stylesheet" type="text/css" href="../css/no_margin.css"/>
+	</head>
+	<body>
+		<div id="login">
+			<img id="mi_logo" src="../register_img/mi_logo.png" />
+			<span id="title">注册小米账号</span>
+			<div id="register_info">
+				<span id="country">国家/地区</span>
+				<select id="select_county">
+					<option>中国</option>
+					<option>美国</option>
+				</select>
+				<b>成功注册账号后，国家/地区不能被修改</b>
+				<span id="tel_num">手机号码</span>
+				<p id="tel_num_info">
+					<select>
+						<option value="">+86</option>
+						<option value="">+86</option>
+					</select>
+					<input type="text" placeholder="请输入手机号码" />
+				</p>
+				<button>立即注册</button>
+			</div>
+			<p id="protocol">
+				<img src="../register_img/dui_hao.png" />
+				注册账号即表示您同意并愿意遵守
+				<a href="#"><b>用户协议</b></a>和
+				<a href="#"><b>隐私政策</b></a>
+			</p>
+		</div>
+	
+		<div id="foot">
+			<p id="foot_p1">
+				<a href="#">简体</a>|
+				<a href="#">繁体</a>|
+				<a href="#">English</a>|
+				<a href="#">常见问题</a>|
+				<a href="#">隐私政策</a>
+			</p>
+			<p id="foot_p2">
+				<span>小米公司版权所有-京ICP备10046444-</span>
+				<img src="../login_img/ghs.png" />
+				<span>京公网安备11010802030134号-京ICP证110507号</span>
+			</p>
+			
+			
+		</div>
+	</body>
+</html>

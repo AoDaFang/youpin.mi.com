@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小米游戏本·详情</title>
+		<style>
+			.same{
+				width: 972px;
+				margin: 0 auto;
+			}
+			a{
+				text-decoration: none;
+			}
+			#xiang_qing_xin_xi{
+				height: 600px;
+				/*background-color: pink;*/
+				padding-top: 1px;
+			}
+			#xiang_qing_left{
+				width: 419px;
+				height: 391px;
+				/*background-color: yellow;*/
+				margin-top: 54px;
+				float: left;
+				position: relative;
+			}
+			#xiang_qing_right{
+				width: 510px;
+				height: 492px;
+				/*background-color: green;*/
+				margin-left: 43px;
+				float: left;
+				margin-top: 54px;
+			}
+			#dian_nao_da_tu{
+				width: 331px;
+				height: 390px;
+				/*background-color: blue;*/
+			}
+			
+			/*用label做图片跳转*/
+			#xiang_qing_left input{
+				display: none;
+			}
+			#xiang_qing_left label{
+				display:block;
+				width: 74px;
+				height: 89px;
+				/*float:left;*/
+				margin-bottom: 8px;
+				/*margin-left:30px;*/
+				box-sizing: border-box;
+				/*float: right;*/
+				position: relative;
+				left: 340px;
+    			top: -390px;
+			}
+			.xiang_qing_xiao_tu{
+				width: 72px;
+    			height: 87px;
+			}
+			#xiang_qing_left>img{
+				width: 330px;
+				height: 390px;
+				position:absolute;
+				top:0;
+				left:0px;
+				/*z-index: 0;*/
+			}
+			#xiang_qing_left input:checked + label + img{
+				z-index: 10;
+			}
+			#xiang_qing_left input:checked + label{
+				border:1px solid #845f3f;
+			}
+			#xiang_qing_right>p:nth-of-type(1){
+				font-size: 13px;
+				font-weight: bold;
+			}
+			#xiang_qing_right>p:nth-of-type(2){
+				font-size: 8px;
+				color: #aba9a5;
+				margin-top: 10px;
+			}
+			#xq_right_p3{
+				margin-top: 19px;
+			}
+			#xq_right_p3 span{
+				/*display: block;*/
+				float: left;
+				font-size: 11px;
+				color: #aba9a5;
+				line-height: 27px;
+			}
+			#xq_right_p3 i{
+				display: inline-block;
+				font-style: normal;
+				width: 33px;
+				font-size: 10px;
+				text-align: center;
+				margin: 3px 5px;
+				border: 1px solid #cc3032;
+				color: #cc3032;
+				margin-left: 6px;
+				/*line-height: ;*/
+			}
+			#xq_right_p3 b{
+				display: inline-block;
+				font-style: normal;
+				font-weight: normal;
+				margin-left: 10px;
+				/*width: 33px;*/
+				font-size: 10px;
+				text-align: center;
+				margin: 3px 5px;
+				/*border: 1px solid #cc3032;*/
+			}
+			#jia_ge{
+				width: 502px;
+				height: 126px;
+				background-color: #F9F9F9;
+				margin-top: 20px;
+				padding-top: 1px;
+				position: relative;
+			}
+			#shou_jia{
+				width: 132px;
+				height: 28px;
+				/*background-color: pink;*/
+				margin-top: 19px;
+			}
+			#shou_jia span{
+				font-size: 10px;
+				margin-left: 9px;
+			}
+			#shou_jia i{
+				font-size: 10px;
+				color: #ba0000;
+				font-style: normal;
+				margin-left: 31px;
+			}
+			#shou_jia b{
+				font-size: 20px;
+				font-weight: normal;
+				color: #ba0000;
+				margin-left: -2px;
+			}
+			#fu_wu{
+				width: 394px;
+				height: 42px;
+				/*background-color: blue;*/
+				margin-top: 21px;
+				margin-left: 9px;
+			}
+			#fu_wu>span>span{
+				font-size: 10px;
+				float: left;
+			}
+			#tan_hao>b{ /* 服务后面的叹号*/
+				display: inline-block;
+				width: 13px;
+				height: 13px;
+				/*background-color: red;*/
+				background-image: url(../xiang_qing_img/tan_hao.png);
+				background-repeat: no-repeat;
+				float: left;
+				/*background-position: 0px ;*/
+			}
+			#fu_wus{
+				width: 336px;
+				height: 42px;
+				/*background-color: yellow;*/
+				float: left;
+				margin-left: 16px;
+			}
+			#fu_wus i{
+				font-style: normal;
+				font-size: 14px;
+			}
+			#fu_wus div{
+				float: left;
+			}
+			#fu_wus span{
+				display: inline-block;
+				width: 18px;
+				height: 17px;
+				background-image: url(../index_img/sprite.png);
+				background-repeat: no-repeat;
+				background-position: 1px -214px;
+			}
+			
+			/*包裹叹号 和 悬浮叹号显示的东西*/
+			#tan_hao div{
+				width: 550px;
+				height: 418px;
+				background-color: white;
+				position: absolute;
+				left: 30px;
+    			top: 82px;
+				overflow: scroll;
+				display: none;
+				border: 1px solid #CCCCCC;
+				box-shadow: 0px 0px 3px;
+			}
+			#tan_hao:hover div{
+				display: block;
+			}
+			#tan_hao div h3{
+				margin-top: 10px;
+				font-size: 16px;
+				font-weight: normal;
+				text-align:center;
+			}
+			#tan_hao div h4{
+				margin-left: 13px;
+				font-size: 13px;
+				font-weight: normal;
+				/*text-align:center;*/
+				margin-top: 22px;
+			}
+			#tan_hao div p{
+				margin-left: 13px;
+				font-size: 12px;
+				font-weight: normal;
+				/*text-align:center;*/
+				color: #666666;
+				margin-top: 15px;
+			}
+			#pei_song{
+				font-size: 11px;
+				margin-left: 13px;
+				margin-top: 23px;
+			}
+			#pei_song span{
+				color: #979a9b;
+				margin-left: 10px;
+			}
+			
+			#ban_ben{
+				/*background-color: red;*/
+				width: 487px;
+				height: 79px;
+				margin-left: 13px;
+				margin-top: 18px;
+			}
+			#ban_ben>span{
+				font-size: 11px;
+				float: left;
+				margin-top: 7px;
+			}
+			#ban_ben input{
+				display: none;
+			}
+			#ban_ben input:checked+label p{
+				border: 1px solid #84603c;
+			}
+			#ban_ben_Btn{
+				float: left;
+				width: 375px;
+				height: 71px;
+				margin-left: 30px;
+				
+			}
+			#ban_ben_Btn p{
+				    width: 177px;
+				    height: 28px;
+				    padding: 10px 22px;
+				    outline: none;
+				    line-height: 11px;
+				    border: 1px solid #CCCCCC;
+				    background-color: white;
+				    margin-right: 10px;
+				    box-sizing: border-box;
+				    float: left;
+				    font-size: 10px;
+			}
+			
+			/*数量*/
+			#shu_liang{
+				margin-left: 13px;
+				margin-top: 24px;
+			}
+			#shu_liang span{
+				display: inline-block;
+				margin-top: 5px;
+				font-size: 11px;
+				float: left;
+				margin-right: 32px;
+			}
+			#shu_liang input[type="button"]{
+				width: 32px;
+				height: 28px;
+				float: left;
+				color: gray;
+				box-sizing: border-box;
+				border: 1px solid gray;
+				outline: 0;
+				background-color: white;
+			}
+			#shu_liang input[type="text"]{
+				width: 56px;
+				height: 28px;
+				float: left;
+				margin-top: 0px;
+				border: 0;
+				border-top: 1px solid gray;
+				border-bottom: 1px solid gray;
+				outline: 0;
+				text-align: center;
+				box-sizing: border-box;
+			}
+			#big_Btn{
+				width: 437px;
+				height: 49px;
+				/*background-color: red;*/
+				margin-top: 78px;
+			}
+			#big_Btn a:nth-of-type(1) input{
+				width: 150px;
+				height: 47px;
+				border: 1px solid #845F3F;
+				color: #845f3f;
+				font-size: 16px;
+				background-color: white;
+				outline: none;
+			}
+			#big_Btn a:nth-of-type(2) input{
+				width: 150px;
+				height: 47px;
+				border: 1px solid #845F3F;
+				color: white;
+				font-size: 16px;
+				background-color: #845f3f;
+				outline: none;
+			}
+			
+			/*概述*/
+			#gai_shu{
+				width: 100%;
+				height: 18543px;
+				/*background-color: pink;*/
+			}
+			#gai_shu_in{
+				height: 18543px;
+				/*background-color: yellow;*/
+			}
+			#gai_shu_all{
+				width: 696px;
+				height: 18543px;
+				/*background-color: blue;*/
+				padding-top: 1px;
+			}
+			#gai_shu_all img{
+				width: 696px;
+				display: block;
+				border: 0;
+			}
+			#gai_shu_banner{
+				width: 696px;
+				height: 40px;
+				background-color: #e7e7e7;
+			}
+			#gai_shu_banner a{
+				color: #504b44;
+				float: left;
+			}
+			#gai_shu_banner span{
+				display: block;
+				font-size: 10px;
+				text-align: center;
+				width: 116px;
+				position: relative;
+				top: 14px;
+				/*margin-top: 14px;*/
+				/*line-height: 40px;*/
+				border-right: 1px solid #d3d3d3;
+			}
+			.gai_shu_Btn{
+				width: 116px;
+				height: 40px;
+				box-sizing: border-box;
+			}
+			#gai_shu_Btn1{
+				border-bottom: 2px solid #916c4b;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/no_margin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/banner.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/xuan_fu.css"/>
+	
+		<!--悬浮列表的样式-->
+		<link rel="stylesheet" type="text/css" href="../css/banner_1.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/er_ji_lie_biao.css"/>
+		
+		<script type="text/javascript" src="../js/xiang_qing.js"></script>
+	</head>
+	<body>
+		<!--黑色头部-->
+		<header>
+			<!--黑色头部——in-->
+			<div id="header_in" class="same">
+				<p>
+					<a href="login.html">登录</a><a href="register.html">注册</a>|
+					<a href="#">帮助中心</a>|
+					<span><a href="#">下载APP</a></span>
+				</p>
+				
+			</div>
+		</header>
+	
+		<!--导航栏-->
+		<div id="banner">
+			<!--导航栏_in-->
+		<div id="banner_in" class="same">
+				<img id="youpin_logo" src="../index_img/logo.d1484e61.png" />
+				<a id="banner_a1" class="banner_a" href="#">开学必备</a>
+				<a class="banner_a" href="#">月度好物</a>
+				<a class="banner_a" href="#">风尚女装</a>
+				<a class="banner_a" href="#">星品驾到</a>
+				<div id="search_div">
+					<a href="#"></a>
+					<input type="text" placeholder="大闸蟹领券208元起"/>
+				</div>
+				<a href="#">
+					<div id="gou_wu_che">
+					
+					</div>
+				</a>
+			</div>
+		</div>
+		
+		<!--电脑详情信息-->
+		<div id="xiang_qing_xin_xi" class="same">
+			<div id="xiang_qing_left">
+				<div id="dian_nao_da_tu">
+					
+				</div>
+				<!--图1-->
+				<input type="radio" name="a1" id="b1">
+				<label id="label1" for="b1">
+					<img class="xiang_qing_xiao_tu" src="../xiang_qing_img/img(1).png" alt="" >
+				</label>
+				<img  src="../xiang_qing_img/da_tu1.png" alt="">
+				
+				<!--图2-->
+				<input type="radio" name="a1" id="b2">
+				<label id="label2" for="b2">
+					<img class="xiang_qing_xiao_tu" src="../xiang_qing_img/img(2).png" alt="">
+				</label>
+				<img src="../xiang_qing_img/da_tu2.png" alt="">
+				
+				<!--图3-->
+				<input type="radio" name="a1" id="b3">
+				<label id="label3" for="b3">
+					<img class="xiang_qing_xiao_tu" src="../xiang_qing_img/img(3).png" alt="">
+				</label>
+				<img src="../xiang_qing_img/da_tu3.png" alt="">
+				
+			</div>
+			
+			<!--详情的右侧各项信息-->
+			<div id="xiang_qing_right">
+				<p id="xq_right_p1">小米游戏本15.6"8代i5 8G 1T+256G 1050Ti 4G</p>
+				<p id="xq_right_p2">小米游戏本15.6"8代i5 8G 1T+256G 1050Ti 4G</p>
+				<p id="xq_right_p3">
+					<span>促销:</span>
+					<i>活动</i>
+					<b>【笔记本专场】开学季特惠，爆品直降</b>
+				</p>
+				<div id="jia_ge">
+					<div id="shou_jia">
+						<span>售价</span>
+						<i>￥</i>
+						<b>6699</b>
+					</div>
+					
+					<div id="fu_wu">
+						<span>
+							<span>服务</span>
+							<!--用于包裹叹号 和 悬浮于叹号显示的div-->
+							<div id="tan_hao">
+								<b></b>
+								<div>
+									<h3>服务说明</h3>
+									<h4>小米有品甄选精品</h4>
+									<p>1、小米有品所售商品，均经过精心挑选，严格把关，为您甄选品质上乘的精品商品；</p>
+									<p>2、非小米、米家品牌商品，第三方品牌为实际销售方，并提供生产/发货/售后服务。</p>
+									<h4>支持7天无理由退货</h4>
+									<h4>邮费说明</h4>
+									<p>1、由小米平台发货的小米/米家自营商品，单笔满150元免运费，不满150元收取10元运费；</p>
+									<p>2、有品平台上的三方商品，即有品配送和第三方商家发货的商品，2018年1月1日起，单笔订单满99元免运费，不满99元收10元运费。</p>
+									<p>3、特殊产品需要单独收取运费，具体以实际结算金额为准；</p>
+									<p>4、优惠券等不能抵扣运费金额。</p>
+									<h4>退换货运费返还声明:</h4>
+									<p>1、非质量问题退换货，运费不予返还；</p>
+									<p>2、因质量问题退换货，运费予以返还，多件产品只退部分产品时，运费按比例返还；</p>
+									<p>3、电视为大件商品，无质量问题退货所产生的物流费由购买者承担，从退款中直接扣除。</p>
+									
+								</div>
+							</div>
+						</span>
+						<div id="fu_wus">
+							<div>
+								<span></span>
+								<i>小米有品甄选精品</i>
+							</div>
+							<div>
+								<span></span>
+								<i>由 小米 发货并负责售后</i>
+							</div>
+							<div>
+								<span></span>
+								<i>支持7天无理由退货(请参考商品详情-常见问题)</i>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--配送区域-->
+				<p id="pei_song">配送区域&nbsp;&nbsp;&nbsp;&nbsp;北京北京市海淀区&nbsp;&nbsp;有货<a href="#"><span>修改</span></a></p>
+				
+				<!--版本-->
+				<div id="ban_ben">
+					<span>版本</span>
+					<div id="ban_ben_Btn">
+						<input type="radio" name="ban_bens" id="ban_ben1" value="" />
+						<label for="ban_ben1">
+							<p>i5 8G 1T+256G 1050Ti 4G</p>
+						</label>
+						
+						<input type="radio" name="ban_bens" id="ban_ben2" value="" />
+						<label for="ban_ben2">
+							<p>i7 8G 1T+256G 1050Ti 4G</p>
+						</label>
+						
+						<input type="radio" name="ban_bens" id="ban_ben3" value="" />
+						<label for="ban_ben3">
+							<p style="margin-top: 10px;">i5 8G 1T+256G 1060 6G</p>
+						</label>
+						
+						<input type="radio" name="ban_bens" id="ban_ben4" value="" />
+						<label for="ban_ben4">
+							<p style="margin-top: 10px;">i7 16G 1T+256G 1060 6G</p>
+						</label>
+					</div>
+				</div>
+			
+				<!--数量-->
+				<div id="shu_liang">
+					<span>数量</span>
+					<b>
+						<input type="button" value="-" />
+						<input type="text" value="1" />
+						<input type="button" value="+" />
+					</b>
+				</div>
+			
+				<!--大按钮-->
+				<div id="big_Btn">
+					<a href="#"><input type="button" value="立即购物" /></a>
+					<a href="#"><input type="button" value="加入购物车" /></a>
+				</div>
+			</div>
+		</div>
+
+		<!--下部，电脑概述大图-->
+		<div id="gai_shu">  <!--100%的div-->
+			<div id="gai_shu_in" class="same">
+				<div id="gai_shu_all">
+					<div id="gai_shu_banner">
+						<a href="#">
+							<div id="gai_shu_Btn1" class="gai_shu_Btn">
+								<span>概述</span>
+							</div>
+						</a>
+						<a href="#">
+							<div id="gai_shu_Btn2" class="gai_shu_Btn">
+								<span>评论</span>
+							</div>
+						</a>
+						<a href="#">
+							<div id="gai_shu_Btn3" class="gai_shu_Btn">
+								<span>参数</span>
+							</div>
+						</a>
+					</div>
+				
+					<!--大图开始-->
+					<img src="../xiang_qing_img/img(4).png" />
+					<img src="../xiang_qing_img/img(5).png" />
+					<img src="../xiang_qing_img/img(6).png" />
+					<img src="../xiang_qing_img/img(7).png" />
+					<img src="../xiang_qing_img/img(8).png" />
+					<img src="../xiang_qing_img/img(9).png" />
+					<img src="../xiang_qing_img/img(10).png" />
+					<img src="../xiang_qing_img/img(11).png" />
+					<img src="../xiang_qing_img/img(12).png" />
+					<img src="../xiang_qing_img/img(13).png" />
+					<img src="../xiang_qing_img/img(14).png" />
+					<img src="../xiang_qing_img/img(15).png" />
+					<img src="../xiang_qing_img/img(16).png" />
+					<img src="../xiang_qing_img/img(17).png" />
+					<img src="../xiang_qing_img/img(18).png" />
+					<img src="../xiang_qing_img/img(19).png" />
+					<img src="../xiang_qing_img/img(20).png" />
+					<img src="../xiang_qing_img/img(21).png" />
+					<img src="../xiang_qing_img/img(22).png" />
+					<img src="../xiang_qing_img/img(23).png" />
+					<img src="../xiang_qing_img/img(24).png" />
+					<img src="../xiang_qing_img/img(25).png" />
+					<img src="../xiang_qing_img/img(26).png" />
+					<img src="../xiang_qing_img/img(27).png" />
+					<img src="../xiang_qing_img/img(28).png" />
+					<img src="../xiang_qing_img/img(29).png" />
+					<img src="../xiang_qing_img/img(30).png" />
+					<img src="../xiang_qing_img/img(31).png" />
+					<img src="../xiang_qing_img/img(32).png" />
+					<img src="../xiang_qing_img/img(33).png" />
+					<!--<img src="../xiang_qing_img/img(4).png" />
+					<img src="../xiang_qing_img/img(4).png" />-->
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+		<!--固定悬浮栏-->
+		<div id="xuan_fus">
+			<div id="xuan_fu1" class="xuan_fu">
+				<div class="sprite_img">
+					
+				</div>
+				<p class="xuan_fus_p">联系客服</p>
+				<div id="lian_xi_yin_cang">
+					<p>小米有品平台问题，建议反馈，商户</p>
+					<p>和物流问题投诉等请拨打 小米有品</p>
+					<p>客服热线</p>
+					<span>400-100-1199</span>
+					<p>(周一至周日 8:00-18:00)</p>
+					<p>小米/米家自营品牌，手机电视智能</p>
+					<p>硬件商品或者订单发货/退款售后问题</p>
+					<p>请拨打小米自营客服热线</p>
+					<span>400-100-5678</span>
+					<p>(周一至周日 8:00-18:00)</p>
+				</div>
+			</div>
+			<div id="xuan_fu2" class="xuan_fu">
+				<div class="sprite_img">
+					
+				</div>
+				<p  class="xuan_fus_p">下载 APP</p>
+				<div id="xia_zai_yin_cang">
+					<img src="../index_img/wx_code.d0d26888.png" />
+					<p>下载小米有品APP</p>
+					<p>得新人礼包</p>
+				</div>
+			</div>
+			<div id="xuan_fu3" class="xuan_fu">
+				<div class="sprite_img">
+					
+				</div>
+				<p  class="xuan_fus_p">新人有礼</p>
+				<div id="xin_ren_yin_cang">
+					<img src="../index_img/jian_mian_li.png"/>
+					<img src="../index_img/wx_code.d0d26888.png" />
+					<p>立即下载·小米有品APP</p>
+				</div>
+			</div>
+			<div id="xuan_fu4" class="xuan_fu">
+				<div class="sprite_img">
+					
+				</div>
+				<p  class="xuan_fus_p">关注微信</p>
+				<div id="wei_xin_yin_cang">
+					<img src="../index_img/wx_code.d0d26888.png" />
+					<p>扫码关注【小米有品生活电商】微信</p>
+					<p>信服务号，赢取小爱mini活动哦</p>
+				</div>
+			</div>
+			<div id="xuan_fu5" class="xuan_fu" style="border: 0;">
+				<a href="#">
+					<div class="sprite_img">
+						
+					</div>
+					<p  class="xuan_fus_p">回到顶部</p>
+				</a>
+			</div>
+		</div>
+		
+		<!--底部-->
+		<footer>
+			<div id="footer_in" class="same">
+				<img id="footer_logo" src="../index_img/logo.d1484e61.png" />
+				<p>版权归米家商城所有</p>
+				<div id="footer_in_right">
+					<span>&copy;mi.com 京ICP证110507号 京ICP备10046444号 京公网安备110108020202134号 京网文[2014]0059-0009号</span>
+					<br />
+					<b>企业名称:小米科技有限责任公司 <a href="#">经营证照</a> 联系电话：010-60606666 <a href="#">关于我们</a> <a href="#">入驻有品</a></b>
+				</div>
+				<img id="cheng_xin" src="../index_img/imge (111).png"/>
+			</div>
+		</footer>
+	
+		<!--吸顶-->
+		<div id="banner_1">
+			<!--导航栏_in-->
+			<div id="banner_1_in" class="same">
+				<img id="youpin_logo" src="../index_img/logo.d1484e61.png" />
+				
+				<div id="san_ji_fen_lei">
+					<div id="span_zeng_qiang">
+						<span>分类∨</span>
+					</div>
+					<div id="carousel_left" style="">
+						<ul id="tui_jian_ul" >
+							<!--第一个！！！！！-->
+							<li id="tui_jian_li1" class="tui_jian_li">
+								<div class="tui_jian_li_block">
+									<p class="carousel_p"><a href="#">有品推荐</a></p>
+								</div>
+								<div class="tui_jian_li_none" >      <!-- 一个隐藏的div-->
+									<div id="tui_jian_fenlei" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>有品推荐</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (3).png" />
+													<span>每日上新</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(1).png" />
+													<span>小米自营</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(2).png" />
+													<span>中秋礼遇</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(3).png" />
+													<span>开学必备</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">				 <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(4).png" />
+													<span>夏季电器</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(5).png" />
+													<span>应季服饰</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(6).png" />
+													<span>居室焕新</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(7).png" />
+													<span>男士精选</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(8).png" />
+													<span>女神范儿</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(9).png" />
+													<span>秋季出游</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(10).png" />
+													<span>人气好评</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(11).png" />
+													<span>本月推荐</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+								</div>
+							</li>
+							
+							
+							<!--第二个！！！！！-->
+							<li id="tui_jian_li2" class="tui_jian_li">
+								<div class="tui_jian_li_block">
+									<p class="carousel_p"><a href="#">家居家纺</a>/<a href="#">家用电器</a></p>
+								</div>
+								<div class="tui_jian_li_none" >
+									
+									<div id="fenlei2" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>家居家纺</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(69).png" />
+													<span>夏凉</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (6).png" />
+													<span>床垫</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (11).png" />
+													<span>灯具</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(5).png" />
+													<span>家具</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(6).png" />
+													<span>被子</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(7).png" />
+													<span>枕头</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(8).png" />
+													<span>床品套件</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(9).png" />
+													<span>家居收纳</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(10).png" />
+													<span>家室花卉</span>
+												</a>
+											</div>
+										</span>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(65).png" />
+													<span>布艺软装</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+									
+									<div id="fenlei3" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>家用电器</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (107).png" />
+													<span>生活电器</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(1).png" />
+													<span>空调/风扇</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(27).png" />
+													<span>洗衣机</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">				 <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(28).png" />
+													<span>净水器</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(10).png" />
+													<span>空气净化器</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(11).png" />
+													<span>新风系统</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(4).png" />
+													<span>冰箱</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(2).png" />
+													<span>厨房家电</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+								
+								</div>
+							</li>
+							
+							<!--第三个！！！！！-->
+							<li id="tui_jian_li3" class="tui_jian_li">
+								<div class="tui_jian_li_block">
+									<p class="carousel_p"><a href="#">手机/电脑</a>/<a href="#">电视影音</a></p>
+								</div>
+								<div class="tui_jian_li_none" >
+									<div id="fenlei4" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>手机/电脑</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(13).png" />
+													<span>小米系列</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(12).png" />
+													<span>红米系列</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(14).png" />
+													<span>平板</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(15).png" />
+													<span>游戏本15.6</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(16).png" />
+													<span>笔记本12.5</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(17).png" />
+													<span>笔记本15.6</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (25).png" />
+													<span>笔记本13.3</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (49).png" />
+													<span>桌面办公</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (75).png" />
+													<span>鼠标键盘</span>
+												</a>
+											</div>
+										</span>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (26).png" />
+													<span>转接线/电源</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+								
+									<div id="fenlei5" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>电视影音</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (67).png" />
+													<span>32-40英寸</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (71).png" />
+													<span>43英寸</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (70).png" />
+													<span>49-50英寸</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(21).png" />
+													<span>55英寸</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(22).png" />
+													<span>65英寸及以上</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(26).png" />
+													<span>盒子</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(27).png" />
+													<span>投影</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(28).png" />
+													<span>音箱</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(29).png" />
+													<span>播放器</span>
+												</a>
+											</div>
+										</span>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(30).png" />
+													<span>影音周边</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+								
+								</div>
+							</li>
+							
+							<!--第四个！！！！！-->
+							<li id="tui_jian_li4" class="tui_jian_li">
+								<div class="tui_jian_li_block">
+									<p class="carousel_p"><a href="#">智能家庭</a>/<a href="#">数码配件</a></p>
+								</div>
+								<div class="tui_jian_li_none">
+									<div id="fenlei6" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>智能家庭</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(30).png" />
+													<span>智能家庭套装</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (75).png" />
+													<span>安防</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (65).png" />
+													<span>网关/传感器</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(18).png" />
+													<span>路由器</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (54).png" />
+													<span>开关插座</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (84).png" />
+													<span>酷玩</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (12).png" />
+													<span>相机</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (22).png" />
+													<span>穿戴</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (19).png" />
+													<span>健康</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+								
+									<div id="fenlei7" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>数码配件</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (15).png" />
+													<span>办公周边</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (16).png" />
+													<span>手机周边</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (39).png" />
+													<span>耳机</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (86).png" />
+													<span>电源/电池</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (86).png" />
+													<span>配适器/线材</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (69).png" />
+													<span>插线板</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (15).png" />
+													<span>电竞</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (22).png" />
+													<span>穿戴</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (11).png" />
+													<span>音箱</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+								
+								</div>
+							</li>
+							
+							<!--第五个！！！！！-->
+							<li id="tui_jian_li5" class="tui_jian_li">
+								<div class="tui_jian_li_block">
+									<p class="carousel_p"><a href="#">餐具厨房</a>/<a href="#">饮食酒水</a></p>
+								</div>
+								<div class="tui_jian_li_none">
+									<div id="fenlei8" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>餐具厨房</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (102).png" />
+													<span>厨房电器</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (16).png" />
+													<span>锅具</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (92).png" />
+													<span>杯壶</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(3).png" />
+													<span>刀剪砧板</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(10).png" />
+													<span>茶咖酒具</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(53).png" />
+													<span>功能厨具</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (21).png" />
+													<span>餐具</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (99).png" />
+													<span>厨房清洁</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (96).png" />
+													<span>保险收纳</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+								
+									<div id="fenlei9" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>饮食酒水</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (31).png" />
+													<span>中秋推荐</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (36).png" />
+													<span>生鲜</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (109).png" />
+													<span>酒水</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (101).png" />
+													<span>方便食品</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (2).png" />
+													<span>零食</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (23).png" />
+													<span>冲调饮料</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(3).png" />
+													<span>茗茶</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (5).png" />
+													<span>粮油调味</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+								
+								</div>
+							</li>
+							
+							<!--第六个！！！！！-->
+							<li id="tui_jian_li6" class="tui_jian_li">
+								<div class="tui_jian_li_block">
+									<p class="carousel_p"><a href="#">服装配饰</a>/<a href="#">鞋靴箱包</a></p>
+								</div>
+								<div class="tui_jian_li_none">
+									<div id="fenlei10" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>服装配饰</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (47).png" />
+													<span>衬衫</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (18).png" />
+													<span>外套</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(56).png" />
+													<span>时尚女装</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (82).png" />
+													<span>内衣</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (83).png" />
+													<span>内裤</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (91).png" />
+													<span>家居服</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (99).png" />
+													<span>袜子</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (108).png" />
+													<span>手表</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (106).png" />
+													<span>首饰</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(7).png" />
+													<span>眼镜</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (38).png" />
+													<span>配饰</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (50).png" />
+													<span>泳具</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+								
+									<div id="fenlei11" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>鞋靴箱包</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (20).png" />
+													<span>运动/户外鞋</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (88).png" />
+													<span>凉鞋/拖鞋</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (29).png" />
+													<span>男鞋</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (78).png" />
+													<span>女鞋</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/iimge (86).png" />
+													<span>鞋配</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(1).png" />
+													<span>旅行箱</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(29).png" />
+													<span>背包</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (104).png" />
+													<span>女士包袋</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (35).png" />
+													<span>功能箱包</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (85).png" />
+													<span>钱包/卡包</span>
+												</a>
+											</div>
+										</span>
+										
+									</div>
+								
+								</div>
+							</li>
+							
+							<!--第七个！！！！！-->
+							<li id="tui_jian_li7" class="tui_jian_li">
+								<div class="tui_jian_li_block">
+									<p class="carousel_p"><a href="#">运动健康</a>/<a href="#">出行户外</a></p>
+								</div>
+								<div class="tui_jian_li_none">
+									<div id="fenlei12" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>运动健康</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (84).png" />
+													<span>保健器材</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (66).png" />
+													<span>康体监护</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (72).png" />
+													<span>运动健身</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (103).png" />
+													<span>泳衣泳具</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (9).png" />
+													<span>护理护具</span>
+												</a>
+											</div>
+											
+										</span>
+								
+										
+									</div>
+								
+									<div id="fenlei13" class="tui_jian_none_fenlei">  <!-- 一个分类-->   
+										<b>出行户外</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(9).png" />
+													<span>户外</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (80).png" />
+													<span>骑行</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(6).png" />
+													<span>汽车用品</span>
+												</a>
+											</div>
+										</span>
+										
+																
+									</div>
+								
+								</div>
+							</li>
+							
+							<!--第八个！！！！！-->
+							<li id="tui_jian_li8" class="tui_jian_li">
+								<div class="tui_jian_li_block">
+									<p class="carousel_p"><a href="#">洗护美妆</a>/<a href="#">日杂文创</a></p>
+								</div>
+								<div class="tui_jian_li_none">
+									
+									<div id="fenlei14" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>洗护美妆</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(20).png" />
+													<span>口腔清洁</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (4).png" />
+													<span>洗护工具</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (23).png" />
+													<span>毛巾浴巾</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (109).png" />
+													<span>基础护肤</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (107).png" />
+													<span>身体护理</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (99).png" />
+													<span>彩妆香氛</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (87).png" />
+													<span>居家清洁</span>
+												</a>
+											</div>
+										</span>
+									</div>
+									
+									<div id="fenlei15" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>日杂文创</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (44).png" />
+													<span>日用</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (45).png" />
+													<span>纸品湿巾</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (41).png" />
+													<span>工具</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/img(3).png" />
+													<span>清洁</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (38).png" />
+													<span>宠物</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (68).png" />
+													<span>文具</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (91).png" />
+													<span>收纳</span>
+												</a>
+											</div>
+	
+										</span>
+										
+									</div>
+									
+									
+								</div>
+							</li>
+							
+							<li id="tui_jian_li9" class="tui_jian_li">
+								<div class="tui_jian_li_block">
+									<p class="carousel_p"><a href="#">母婴亲子</a></p>
+								</div>
+								<div class="tui_jian_li_none">
+									<div id="fenlei16" class="tui_jian_none_fenlei">  <!-- 一个分类-->
+										<b>母婴亲子</b>
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->   <!--一行-->
+											<div class="cell">              <!--一个商品-->
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (5).png" />
+													<span>玩具</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (30).png" />
+													<span>出行</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (108).png" />
+													<span>儿童穿戴</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (98).png" />
+													<span>婴童服装</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错--> <!--一行-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (104).png" />
+													<span>童鞋童包</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (10).png" />
+													<span>喂养</span>
+												</a>
+											</div>
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (101).png" />
+													<span>洗护</span>
+												</a>
+											</div>
+										</span>
+										
+										<span class="fenlei_hang_p">         <!--************************此处换成p标签出错-->
+											<div class="cell">
+												<a href="#">
+													<img class="er_ji_img_small" src="../index_img/imge (82).png" />
+													<span>寝具</span>
+												</a>
+											</div>
+	
+										</span>
+										
+									</div>
+								</div>
+							</li>
+	
+							
+						</ul>
+					</div>
+				</div>
+				
+				
+				<!--此处写了行内样式-->
+				<a id="banner_1_a1" style="margin-left: 67px;" class="banner_1_a" href="#">开学必备</a>
+				<a class="banner_1_a" href="#">月度好物</a>
+				<a class="banner_1_a" href="#">风尚女装</a>
+				<a class="banner_1_a" href="#">星品驾到</a>
+				<div id="search_div">
+					<a href="#"></a>
+					<input type="text" placeholder="手机"/>
+				</div>
+				<a href="#">
+					<div id="gou_wu_che">
+					
+					</div>
+				</a>
+			</div>
+		</div>
+		
+	
+	</body>
+</html>

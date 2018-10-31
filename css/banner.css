@@ -1,0 +1,62 @@
+	#banner{
+		width: 100%;
+		height: 68px;
+		/*background-color: pink;*/
+		/*overflow: hidden;*/
+		padding-top: 0.5px;
+	}
+	#banner_in{
+		height: 46px;
+		/*background-color: yellow;*/
+		margin-top: 22px;
+	}
+	#youpin_logo{
+		width: 109px;
+		/*height: 29px;*/
+		float: left;
+	}
+	.banner_a{
+		font-size: 15px;
+		color: #575e66;
+		text-decoration: none;
+		margin-right: 30px;
+		line-height: 46px;
+		float: left;
+	}
+	#banner_a1{
+		margin-left: 132px;
+	}
+	#search_div{
+		width: 252px;
+		height: 29px;
+		border-bottom: 2px solid #ececec;
+		float: left;
+		margin-top: 3px;
+		margin-left: 85px;
+		padding-bottom: 3px;
+	}
+	#search_div:hover{
+		border-color: #845a2d;
+	}
+	#search_div input{
+		border: 0;
+		outline: 0;
+		height: 29px;
+		width: 227px;
+		display: block;
+		float: left;
+		text-indent: 1em;
+	}
+	#search_div a  {
+		display: block;
+		height: 29px;
+		width: 23px;
+		/*background-color: red;*/
+		float: left;
+		background-image: url(../index_img/sprite.png);
+		background-position: -5px -1458px;
+		margin-right: 2px;
+	}
+	#search_div a:hover  {
+		background-position: -5px -1424px;
+	}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小米账号-登录</title>
+		<style>
+			body{
+				background-color: #f5f5f5;
+			}
+			#login{
+				width: 854px;
+				height: 624px;
+				background-color: white;
+				margin: 0 auto;
+				margin-top: 20px;
+				overflow: hidden;
+			}
+			#mi_logo{
+				display: block;
+				margin: 0 auto;
+				margin-top: 51px;
+				margin-left: 394px;
+			}
+			#deng_lu_span{
+				display: block;
+				text-align: center;
+				font-size: 28px;
+				margin-top: 30px;
+			}
+			#id{
+				display: block;
+				margin: 0 auto;
+				width: 356px;
+				height: 49px;
+				text-indent: 1em;
+				margin-top: 46px;
+				outline: 0;
+			}
+			#password{
+				display: block;
+				margin: 0 auto;
+				width: 356px;
+				height: 49px;
+				text-indent: 1em;
+				margin-top: 15px;
+				outline: 0;
+			}
+			#deng_lu_btn{
+				display: block;
+				margin: 0 auto;
+				width: 356px;
+				height: 49px;
+				text-indent: 1em;
+				margin-top: 15px;
+				outline: 0;
+				font-size: 14px;
+				color: white;
+				background-color: #ef5b00;
+				border: 0;
+				cursor: pointer;
+			}
+			#login_p1{
+				display: block;
+				text-align: center;
+				font-size: 13px;
+				margin-top: 12px;
+				color: #bdbdbd;
+			}
+			#login_p1 a:nth-of-type(1){
+				text-decoration: none;
+				color: #ef5b00;
+				margin-right: 130px;
+			}
+			#login_p1 a:nth-of-type(2){
+				text-decoration: none;
+				color: #b7b5b3;
+			}
+			#login_p1 a:nth-of-type(3){
+				text-decoration: none;
+				color: #b7b5b3;
+			}
+			#login_p2{
+				display: block;
+				text-align: center;
+				margin-top: 37px;
+			}
+			#login_p2 b{
+				font-size: 15px;
+				font-weight: normal;
+				color: #c9c9c9;
+			}
+			#login_p2 span{
+				display: inline-block;
+				width: 139px;
+				height: 1px;
+				background-color:#c9c9c9;
+				position: relative;
+				top: -5px;
+			}
+			#qi_ta{
+				width: 205px;
+				height: 42px;
+				/*background-color: yellow;*/
+				margin: 0 auto;
+				margin-top: 22px;
+				display: flex;
+				justify-content: space-between;
+			}
+			#foot{
+				width: 568px;
+				height: 54px;
+				margin: 0 auto;
+				/*background-color: yellow;*/
+				margin-top: 42px; 
+			}
+			#foot_p1{
+				font-size: 14px;
+				color: #9e9d9c;
+				text-align: center;
+			}
+			#foot_p1 a{
+				
+				font-size: 14px;
+				color: #9e9d9c;
+				margin: 0 9px;
+				text-decoration: none;
+			}
+			#foot_p2{
+				font-size: 11px;
+				color: #9e9d9c;
+				text-align: center;
+				margin-top: 10px;
+			}
+			#ewm_cover{
+				width: 69px;
+				height: 69px;
+				background-color: white;
+				/*position: absolute;*/
+				/*left: 1126px;
+    			top: 20px;*/
+    			float: right;
+    			z-index: 999;
+    			opacity: 0.8; 
+				filter: alpha(opacity=50);
+				position: relative;
+				left:66px;
+				top: 0px;
+			}
+			#big_corver:hover #ewm_cover{
+				display: none;
+			}
+			
+			#ewm_small{
+				/*position: absolute;*/
+				float: right;
+				position: relative;
+				/*top: 0;*/
+				/*left: 1126px;
+    			top: 20px;*/
+			}
+			
+			#login_up{
+				/*display: none;*/
+				width: 854px;
+				height: 624px;
+				background-color: white;
+				margin: 0 auto;
+				margin-top: 20px;
+				overflow: hidden;
+				/*background-color: red;*/
+			}
+			#login_down {
+				width: 854px;
+				height: 624px;
+				background-color: white;
+				margin: 0 auto;
+				/*margin-top: 20px;*/
+				padding-top: 118px;
+				overflow: hidden;
+				/*background-color: green;*/
+			}
+			#login_down span{
+				display: block;
+				font-size: 29px;
+				color: #ff5700;
+				text-align: center;
+			}
+			#login_down p{
+				font-size: 14px;
+				text-align: center;
+				color: #989a9b;
+				margin-top: 17px;
+				margin-bottom: 53px;
+			}
+			#login_down_img1{
+				display: block;
+				margin: 0 auto;
+			}
+			#login_down_img2{
+				position: relative;
+				left: 725px;
+    			top: -449px;
+			}
+		</style>
+	
+		<script>
+			window.onload = function(){
+				
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="../css/no_margin.css"/>
+	</head>
+	<body>
+		<div id="login">
+			
+			
+			
+			<div id="login_up">
+				
+				<div id="big_corver">
+					<a href="#login_down"><img id="ewm_small" src="../login_img/ewm_small.png" /></a>
+					<div id="ewm_cover">
+						
+					</div>
+				</div>
+				
+				<img id="mi_logo" src="../login_img/mi_logo.png" />
+				<span id="deng_lu_span">小米账号登录</span>
+				<form>
+					<input id="id" type="text" placeholder="邮箱/手机号/小米ID" required="required" />
+					<input id="password" type="password" placeholder="密码" required="required" />
+					<input id="deng_lu_btn" type="submit" value="登录" />
+				</form>
+				<p id="login_p1"><a href="#">手机短信登录/注册</a>    <a href="#">立即注册</a> | <a href="#">忘记密码</a></p>
+				<p id="login_p2">   <span id="login_span1"></span>   <b>其他登录方式</b>    <span id="login_span1"></span> </p>
+				<div id="qi_ta">
+					<a href="#"><img src="../login_img/qq.png" alt="" /></a>
+					<a href="#"><img src="../login_img/wei_bo.png" alt="" /></a>
+					<a href="#"><img src="../login_img/zhi_fu_bao.png" alt="" /></a>
+					<a href="#"><img src="../login_img/wei_xin.png" alt="" /></a>
+				</div>
+				
+			</div>
+			
+			<div id="login_down">
+				<span>小米帐号扫码登录</span>
+				<p>请打开「设置 > 小米帐号 > 右上角扫一扫」扫码登录</p>
+				<img id="login_down_img1" src="../login_img/ewm.png" />
+				<a href="#login_up"><img id="login_down_img2" src="../login_img/X.png" /></a>
+			</div>
+			
+		</div>
+	
+		<div id="foot">
+			<p id="foot_p1">
+				<a href="#">简体</a>|
+				<a href="#">繁体</a>|
+				<a href="#">English</a>|
+				<a href="#">常见问题</a>|
+				<a href="#">隐私政策</a>
+			</p>
+			<p id="foot_p2">
+				<span>小米公司版权所有-京ICP备10046444-</span>
+				<img src="../login_img/ghs.png" />
+				<span>京公网安备11010802030134号-京ICP证110507号</span>
+			</p>
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+	  <TITLE> New Document </TITLE>
+	  <SCRIPT LANGUAGE="JavaScript">
+		 function test(){
+		  	var oIframe = document.getElementById("div1");
+			alert(oIframe.offsetTop);
+			alert(oIframe.scrollTop);
+		 }
+	  </SCRIPT>
+ </HEAD>
+
+	 <BODY style="border:1px red solid;padding:20px;margin:0px;">
+		 <div id="div1" style="border:1px blue solid;height:400px;width:200px;overflow:auto">
+			 <iframe id="iframe1" src="http://www.baidu.com" width="400" height="500" style="border:1px red solid;" scrolling="no">
+			 </iframe>
+		 </div>
+		 <input type="button" value="OK" onclick="test()"/>
+	 </BODY>
+</HTML>
+<script type="text/javascript" ></script>

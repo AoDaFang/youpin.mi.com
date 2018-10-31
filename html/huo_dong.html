@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>小米有品-活动页</title>
+		<meta charset="UTF-8">
+		<style>
+			#big{
+				width: 100%;
+				height:7034px;
+				background-color: #181A4D;
+			}
+			.same_huo_dong{
+				width: 523px;
+				margin: 0 auto;
+			}
+			#big_in{
+				width: 523px;
+				height: 4295px;
+				
+				margin: 0 auto;
+			}
+			.huo_dong_da_tu{
+				width: 523px;
+				display: block;
+				border: 0;
+			}
+			.huo_dong_div{
+				position: relative;
+			}
+			.huo_dong_a_big{
+				position: absolute;
+				/*background-color: yellow;*/
+				display: block;
+				width: 477px;
+				height: 186px;
+				margin-left: 23px;
+				/*z-index: 99;*/
+			}
+			.huo_dong_a_small{
+				position: absolute;
+				display: block;
+				width: 230px;
+				height: 293px;
+				/*background-color: pink;*/
+			}
+			#huo_dong_div1 a:nth-of-type(1){
+				margin-top: -422px;
+			}
+			#huo_dong_div1 a:nth-of-type(2){
+				margin-top: -203px;
+			}
+			#huo_dong_div2 a{
+				/*background-color: red;*/
+			}
+			#huo_dong_div2 a:nth-of-type(1){
+				margin-top: -422px;
+			}
+			#huo_dong_div2 a:nth-of-type(2){
+				margin-top: -203px;
+			}
+			
+			#huo_dong_div3 a{
+				/*background-color: green;*/
+			}
+			#huo_dong_div3 a:nth-of-type(1){
+				margin-top: -454px;
+			}
+			#huo_dong_div3 a:nth-of-type(2){
+				margin-top: -235px;
+			}
+			
+			#huo_dong_div4 a:nth-of-type(1){
+				margin-top: -525px;
+			}
+			#huo_dong_div4 a:nth-of-type(2){
+				margin-top: -309px;
+				margin-left: 25px;
+			}
+			#huo_dong_div4 a:nth-of-type(3){
+				margin-top: -308px;
+    			margin-left: 273px;
+			}
+			
+			#huo_dong_div5 a{
+				/*background-color: blue;*/
+			}
+			#huo_dong_div5 a:nth-of-type(1){
+				margin-top: -467px;
+			}
+			#huo_dong_div5 a:nth-of-type(2){
+				margin-top: -247px;
+			}
+			#sheng_xian{
+				height: 4295px;
+				/*background-color: yellow;*/
+				padding-top: 1px;
+				background-color: #003a7a;
+			}
+			
+			/*生鲜*/
+			#sheng_xian_title{
+				width: 269px;
+				height: 28px;
+				/*background-color: red;*/
+				margin: 0 auto;
+			}
+			#sheng_xian_title b{
+				float: left;
+				line-height: 28px;
+				font-size: 26px;
+				color: #faed95;
+				margin: 0 9px;
+			}
+			#sheng_xian_title span{
+				display:block;
+				background-color: #faed95;
+				width: 73px;
+				height: 1px;
+				float: left;
+				margin-top: 15px;
+			}
+			
+			.sheng_xiang_hang{
+				width: 495px;
+				height: 323px;
+				/*background-color: pink;*/
+				margin: 0 auto;
+				padding-top: 1px;
+				/*margin-top: 24px;*/
+				display: flex;
+				justify-content: space-between;
+			}
+			#shen_xiang_hang1{
+				margin-top: 24px;
+			}
+			
+			/*单个商品的样式*/
+			.huo_dong_shang_pin{
+				width: 241px;
+				height: 323px;
+				/*background-color: green;*/
+				position: relative;
+			}
+			.shang_pin_kong{
+				width: 241px;
+				height: 123px;
+				background-color: white;
+				margin-top: 65px;
+				border-radius: 8px;
+			}
+			.huo_dong_shang_pin>span{
+				display: block;
+				font-size: 18px;
+				color: white;
+				text-align: center;
+				margin-top: 4px;
+				
+				/*省略号*/
+				width:240px;
+				white-space:nowrap;
+				overflow:hidden;
+				text-overflow:ellipsis;
+			}
+			.huo_dong_shang_pin>b{
+				font-weight: normal;
+				display: block;
+				font-size: 12px;
+				color: white;
+				text-align: center;
+				margin-top: 8px;
+				
+				/*省略号*/
+				width:240px;
+				white-space:nowrap;
+				overflow:hidden;
+				text-overflow:ellipsis;
+				
+			}
+			.huo_dong_shang_pin>p{
+				text-align: center;
+				font-size: 16px;
+				color: #fff489;
+				margin-top: 14px;
+				
+				
+			}
+			.huo_dong_shang_pin>p>i{
+				font-style: normal;
+				color: #fff489;
+				font-size: 13px;
+			}
+			.huo_dong_shang_pin>input{
+				display: block;
+				width: 145px;
+				height: 39px;
+				background-color: #fff489;
+				color: #c94932;
+				border: 0;
+				outline: 0;
+				border-radius: 5px;
+				margin: 0 auto;
+				font-size: 18px;
+				margin-top: 8px;
+			}
+			.huo_dong_shang_pin>img{
+				width: 167px;
+				position: absolute;
+				left: 34px;
+    			top: 8px;
+			}
+			
+			#you_pei_xiao_cheng_xu{
+				position: fixed;
+				left: 1024px;
+				top: 0px;
+			}
+			#you_pei_xiao_cheng_xu img{
+				width: 114px;
+				height: 132px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../css/no_margin.css"/>
+	</head>
+	<body>
+		<div id="big">
+			<div id="big_in">
+				<!--上方大图开始-->
+				<img class="huo_dong_da_tu" src="../huo_dong_img/img.png" />
+				<a href="#"><img class="huo_dong_da_tu" src="../huo_dong_img/img(1).png" /></a>
+				<div id="huo_dong_div1" class="huo_dong_div">
+					<img class="huo_dong_da_tu" src="../huo_dong_img/img(2).png" />
+					<a href="#" class="huo_dong_a_big"></a>
+					<a href="#" class="huo_dong_a_big"></a>
+				</div>
+				<div id="huo_dong_div3" class="huo_dong_div">
+					<img class="huo_dong_da_tu" src="../huo_dong_img/img(3).png" />
+					<a href="#" class="huo_dong_a_big"></a>
+					<a href="#" class="huo_dong_a_big"></a>
+				</div>
+				<div id="huo_dong_div4" class="huo_dong_div">
+					<img class="huo_dong_da_tu" src="../huo_dong_img/img(4).png" />
+					<a href="#" class="huo_dong_a_big"></a>
+					<a href="#" class="huo_dong_a_small"></a>
+					<a href="#" class="huo_dong_a_small"></a>
+				</div>
+				<div id="huo_dong_div5" class="huo_dong_div">
+					<img class="huo_dong_da_tu" src="../huo_dong_img/img(5).png" />
+					<a href="#" class="huo_dong_a_big"></a>
+					<a href="#" class="huo_dong_a_big"></a>
+				</div>
+				
+				<!--商品分类开始-->
+				<!--生鲜素食-->
+				<div id="sheng_xian" class="same_huo_dong">
+					<p id="sheng_xian_title"><span></span><b>生鲜素食</b><span></span></p>
+					
+					<!--第1行-->  
+					<div id="shen_xiang_hang1" class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>大希地香草黑椒西冷牛排1...</span>
+							<b>进口牛肉原料 整块切割 8袋装</b>
+							<p>158<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(64).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>大希地 牛肉酱意面 6份</span>
+							<b>加热即食，大颗牛肉粒，澳洲风味</b>
+							<p>99<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(133).png" />
+						</div>
+					</div>
+					
+					<!--第2行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>奥尔良鸡翅 24对</span>
+							<b>健康取材，甜辣多汁，鲜嫩细腻</b>
+							<p>108<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(141).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>大希地 谷饲原切牡蛎牛排200g*5盒</span>
+							<b>进口谷饲牛肉，丰腴肥美</b>
+							<p>178<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(132).png" />
+						</div>
+					</div>
+				
+					<!--第3行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>法式低温西冷牛排 160g*6袋</span>
+							<b>进口原切未腌制，有筋更带劲</b>
+							<p>228<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(110).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>红钻 软籽石榴</span>
+							<b>啃着吃 不吐籽 香甜美味</b>
+							<p>88<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imgee(1).png" />
+						</div>
+					</div>
+					
+					<!--第4行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>法式低温上脑牛排 160g*6袋</span>
+							<b>雪花纹理，鲜嫩多汁，自然原味</b>
+							<p>228<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(111).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>黑椒味牛肉粒 6袋</span>
+							<b>进口牛肉原料，新品首发特惠</b>
+							<p>99<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(105).png" />
+						</div>
+					</div>
+					
+					<!--第5行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>大希地 安南之恋巴沙鱼片200g*6袋</span>
+							<b>水润鲜活，细腻鲜嫩，健康低卡</b>
+							<p>78<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(7).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>大希地 忘不了大鸡排135g*10袋	</span>
+							<b>美味瞬享，肉质鲜嫩，健康低卡</b>
+							<p>78<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(141).png" />
+						</div>
+					</div>
+					
+					<!--第6行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>大希地鳕鱼天赋罗108g*8袋 送芒果酱	</span>
+							<b>纯鳕鱼肉，净海养殖，自然鲜嫩</b>
+							<p>88<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(139).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>和厨咖喱牛肉冻干面 12杯/箱</span>
+							<b>冻干工艺制造，大片咖喱牛肉</b>
+							<p>64.9<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(115).png" />
+						</div>
+					</div>
+					
+					<!--第7行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>和厨番茄鸡蛋冻干面</span>
+							<b>非油炸冻干技术，新鲜口感，  汤汁浓郁</b>
+							<p>64.9<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(123).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>和厨一碗阳春面 12杯装</span>
+							<b>爆款冻干面的美味延续，高汤细面， 五分钟立享</b>
+							<p>99<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(122).png" />
+						</div>
+					</div>
+					
+					<!--第8行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>阿宽酸汤老鸭味方便绿豆粉丝 12杯</span>
+							<b>土养老鸭，陈坛泡萝卜，酸爽开胃</b>
+							<p>59.9<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(126).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>阿宽酸辣味方便绿豆粉丝 12杯装</span>
+							<b>秘制红油，香脆黄豆，开胃解馋</b>
+							<p>59.9<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(11).png" />
+						</div>
+					</div>
+					
+					<!--第9行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>海福盛冻干粥深海鱼粥12杯装</span>
+							<b>深海马鲛，真正高汤，经典东方料</b>
+							<p>69.9<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(64).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span> 饮食伙计 低脂控碳即食餐*5盒装  3种口味</span>
+							<b>开袋即食，控碳低脂，科学营养</b>
+							<p>99<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(64).png" />
+						</div>
+					</div>
+					
+					<!--第10行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>海福盛冻干粥小米瘦肉粥12杯装					</span>
+							<b>轻食养生，养脾健胃，现煮版口感</b>
+							<p>64.9<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(108).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>台湾老妈拌面 4包*2袋</span>
+							<b>48小时日光晒制，劲道爽滑酱香浓郁</b>
+							<p>79<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(80).png" />
+						</div>
+					</div>
+					
+					<!--第11行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>培根陪你帕尼尼 100g*10</span>
+							<b>加热即食，鲜香培根，健康低卡</b>
+							<p>78<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(23).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>日式味噌冻干汤 12杯/箱	</span>
+							<b>冻干技术制造，菜料丰富，非油炸</b>
+							<p>45<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(122).png" />
+						</div>
+					</div>
+					
+					<!--第12行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>大希地 麻辣虾球350g/盒*2盒</span>
+							<b>取材健康，三次清洗，壳薄肉厚</b>
+							<p>99<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(2).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>海福盛番茄蛋花汤冻干汤 12杯/箱					</span>
+							<b>烟台柴鸡蛋，开胃爽口，便捷冲泡</b>
+							<p>45<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(123).png" />
+						</div>
+					</div>
+					
+					<!--第13行-->
+					<div class="sheng_xiang_hang">
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>淮河小镇  盱眙龙虾 1.5kg</span>
+							<b>产地直供，大厨秘制，5分钟瞬享</b>
+							<p>89<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(83).png" />
+						</div>
+						<div class="huo_dong_shang_pin">
+							<div class="shang_pin_kong">
+								
+							</div>
+							<span>和厨番茄鸡蛋冻干面</span>
+							<b>非油炸冻干技术，新鲜口感，  汤汁浓郁</b>
+							<p>59.9<i>元</i></p>
+							<input type="button" value="立即购买"/>
+							<img src="../huo_dong_img/imge(34).png" />
+						</div>
+					</div>
+					
+				</div>
+			
+				<!--固定悬浮-->
+				<div id="you_pei_xiao_cheng_xu">
+					<img src="../huo_dong_img/img(7).png" />
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#main{
+				margin:50px;
+				width:400px;
+				height:330x;
+				background-color:red;
+				position:relative;
+			}
+			#mark{
+				position:absolute;
+				width:400px;
+				height:330px;
+				filter:alpha(opacity=0);
+				opacity:0;
+				background-color:#fff;
+				z-index:8;
+				cursor:move;
+			}
+			#move_box{
+				display:none;
+				position:absolute;
+				width:100px
+				;height:100px;
+				background:url(images/1.png) repeat
+				;cursor:move;
+			}
+			#small_box{
+				border:1px solid #ddd;
+				overflow:hidden;
+			}
+			#big_box{
+				display:none;
+				position:absolute;
+				left:420px;
+				top:0px;width:800px;
+				height:660px;
+				overflow:hidden;
+				border:1px solid #ddd;
+			}
+			#big_box img{
+				position:absolute;
+				cursor:move;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+			    var $=function(id){
+			        return typeof(id)=="string"?document.getElementById(id):id
+			    };
+			
+			    var Main = $("main");
+			    var Mark = $("mark");               //小图的容器事件触发
+			    var MoveBox = $("move_box");        //鼠标移动遮罩
+			    var SmallBox = $("small_box");      //小图的容器
+			    var BigBox = $("big_box");          //大图的容器
+			    var BigBoxImages = BigBox.getElementsByTagName("img")[0];           //移动的大图
+			    var TimerLeave = null;
+			    var disX = 0;                       //大图拖拽的初始坐标
+			    var disY = 0;
+
+
+			    Mark.onmouseover = function(){
+			        if(TimerLeave){
+			            clearTimeout(TimerLeave);
+			        }
+			        MoveBox.style.display = "block";
+			        BigBox.style.display = "block";
+			    }
+			    Mark.onmouseout = function(){
+			        TimerLeave = setTimeout(function(){             //延迟消失
+			            MoveBox.style.display = "none";
+			            BigBox.style.display = "none";
+			        },1000)
+			    }
+			
+			    BigBox.onmouseover = function(){
+			        if(TimerLeave){
+			            clearTimeout(TimerLeave);
+			        }
+			        MoveBox.style.display = "block";
+			        BigBox.style.display = "block";
+			    }
+			    BigBox.onmouseout = function(){
+			        TimerLeave = setTimeout(function(){
+			            MoveBox.style.display = "none";
+			            BigBox.style.display = "none";
+			        },1000)
+			    }
+			
+			    Mark.onmousemove = function(e){
+			        var oEvent = e || event;
+			        var left = oEvent.clientX - Mark.offsetLeft - Main.offsetLeft - MoveBox.offsetWidth/2;      //计算小图容器里的鼠标坐标(要减去最外层的偏移)
+			        var top = oEvent.clientY - Mark.offsetTop - Main.offsetTop - MoveBox.offsetHeight/2;        //计算小图容器里的鼠标坐标(要减去最外层的偏移)
+			
+			        MoveBox.style.width = Mark.offsetWidth/(BigBoxImages.offsetWidth/BigBox.offsetWidth)+ "px";       //根据（大图宽高/大图容器宽高）来计算（移动遮罩在小图容器的宽度）
+			        MoveBox.style.height = Mark.offsetHeight/(BigBoxImages.offsetHeight/BigBox.offsetHeight)+ "px";
+			
+			        var maxWidth = Mark.offsetWidth - MoveBox.offsetWidth;
+			        var maxHeight = Mark.offsetHeight - MoveBox.offsetHeight;
+			
+			        left = left < 0 ? 0 : left > maxWidth ? maxWidth : left;            //判断不让移动遮罩移动出小图容器
+			        top = top < 0 ? 0 : top > maxHeight ? maxHeight : top;
+			        MoveBox.style.left = left + "px";
+			        MoveBox.style.top = top + "px";
+			
+			        var percentX = left/(maxWidth);        //计算比例值 
+			        var percentY = top/(maxHeight);
+			
+			        BigBoxImages.style.left = -percentX*(BigBoxImages.offsetWidth - BigBox.offsetWidth) + "px"; //鼠标在小图容器的坐标/(小图容器-移动遮罩)得出比例来计算在（大图中要显示的位置);
+			        BigBoxImages.style.top = -percentY*(BigBoxImages.offsetHeight - BigBox.offsetHeight) + "px";
+			
+			    }
+			
+			    //拖拽
+			    BigBoxImages.onmousedown = function(e){
+        var oEvent = e || event;
+        disX = getPos(oEvent).x - BigBoxImages.offsetLeft;          //先记录上次大图的鼠标的位置
+        disY = getPos(oEvent).y - BigBoxImages.offsetTop;
+
+        if(BigBoxImages.setCapture){                                //ie低版本事件捕获兼容
+            BigBoxImages.setCapture();
+            BigBoxImages.onmousemove = MouseMove;
+            BigBoxImages.onmouseup = MouseUp;
+        }else{
+            document.onmousemove = MouseMove;
+            document.onmouseup = MouseUp;
+        }
+
+        function MouseMove(e){
+            var oEvent = e || event;
+
+            var NewLeft = getPos(oEvent).x - disX;                  //鼠标移动后的坐标
+            var NewTop = getPos(oEvent).y - disY;
+            var smallPercentX = NewLeft/(BigBoxImages.offsetWidth - BigBox.offsetWidth);            //计算比例值 
+            var smallPercentY = NewTop/(BigBoxImages.offsetHeight - BigBox.offsetHeight);
+            var MoveLeft = -smallPercentX*(Mark.offsetWidth - MoveBox.offsetWidth);                 //计算出移动遮罩offsetLeft和offsetTop
+            var MoveTop = -smallPercentY*(Mark.offsetHeight - MoveBox.offsetHeight);
+
+            MoveLeft = MoveLeft < 0 ? 0 : MoveLeft > Mark.offsetWidth - MoveBox.offsetWidth ? Mark.offsetWidth - MoveBox.offsetWidth : MoveLeft;
+            MoveTop = MoveTop < 0 ? 0 : MoveTop > Mark.offsetHeight - MoveBox.offsetHeight ? Mark.offsetHeight - MoveBox.offsetHeight : MoveTop;
+
+            MoveBox.style.left = MoveLeft + "px";   
+            MoveBox.style.top = MoveTop + "px";
+
+
+            BigBoxImages.style.left = NewLeft + "px";
+            BigBoxImages.style.top = NewTop + "px";
+
+            //限制移出容器
+            if(NewLeft > 0){
+               BigBoxImages.style.left = 0 + "px"; 
+            }else if(NewLeft < BigBox.offsetWidth - BigBoxImages.offsetWidth){
+                BigBoxImages.style.left = BigBox.offsetWidth - BigBoxImages.offsetWidth + "px";
+            }
+
+            if(NewTop > 0){
+               BigBoxImages.style.top = 0 + "px"; 
+            }else if(NewTop < BigBox.offsetHeight - BigBoxImages.offsetHeight){
+                BigBoxImages.style.top = BigBox.offsetHeight - BigBoxImages.offsetHeight + "px";
+            }
+             
+        }
+
+        function MouseUp(){
+            this.onmousemove = null;
+            this.onmouseup = null;
+            if( BigBoxImages.setCapture ){
+                BigBoxImages.releaseCapture() ;
+            }
+        }
+        return false;
+    }
+			
+			    function getPos(e){
+			        var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+			        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+			        return{x:e.clientX + scrollLeft, y:e.clientY +scrollTop}
+			    }
+		}
+		</script>
+	</head>
+	<body>
+		<div id="main">
+		    <div id="mark"></div>
+		    <div id="move_box"></div>
+		    <div id="small_box">
+		        <img style="width: 400px; height: 330px;" src="../index_img/fei_xing_qi.png" alt="" />
+		    </div>
+		    <div id="big_box">
+		        <img style="width: 1880px; height: 1660px;" src="../index_img/fei_xing_qi.png" alt="" />
+		    </div>
+		</div>
+	</body>
+</html>

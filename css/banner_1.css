@@ -1,0 +1,126 @@
+#banner_1{
+		width: 100%;
+		height: 68px;
+		/*background-color: pink;*/
+		/*overflow: hidden;*/
+		padding-top: 0.5px;
+	}
+	#banner_1_in{
+		height: 46px;
+		/*background-color: yellow;*/
+		margin-top: 22px;
+	}
+	#youpin_logo{
+		width: 109px;
+		/*height: 29px;*/
+		float: left;
+	}
+	.banner_1_a{
+		font-size: 15px;
+		color: #575e66;
+		text-decoration: none;
+		margin-right: 30px;
+		line-height: 46px;
+		float: left;
+	}
+	#banner_1_a1{
+		margin-left: 132px;
+	}
+	#search_div{
+		width: 252px;
+		height: 29px;
+		border-bottom: 2px solid #ececec;
+		float: left;
+		margin-top: 3px;
+		margin-left: 85px;
+		padding-bottom: 3px;
+	}
+	#search_div:hover{
+		border-color: #845a2d;
+	}
+	#search_div input{
+		border: 0;
+		outline: 0;
+		height: 29px;
+		width: 227px;
+		display: block;
+		float: left;
+		text-indent: 1em;
+	}
+	#search_div a  {
+		display: block;
+		height: 29px;
+		width: 23px;
+		/*background-color: red;*/
+		float: left;
+		background-image: url(../index_img/sprite.png);
+		background-position: -5px -1458px;
+		margin-right: 2px;
+	}
+	#search_div a:hover  {
+		background-position: -5px -1424px;
+	}
+	
+	/*三级列表*/
+			/*#san_ji_fen_lei{
+				position: relative;
+			}*/
+			#san_ji_fen_lei>div>span{
+				display: block;
+				float: left;
+				width: 55px;
+				height: 23px;
+				font-size: 12px;
+				line-height: 23px;
+				border: 1px solid #CCCCCC;
+    			padding-left: 5px;
+			}
+			#span_zeng_qiang{
+				width: 58px;
+				height: 37px;
+				/*background-color: red;*/
+				float: left;
+				margin-top: 8px;
+				margin-left: 5px;
+			}
+			#carousel_left{
+				display: none;
+				position: absolute!important;
+				left: 269px;
+				top: 69px;
+			}
+			#san_ji_fen_lei:hover #carousel_left{
+				display: block;
+			}
+			
+			
+			#banner_1{
+				background-color: rgba(0,0,0,0.2);
+		       	margin-top: 300px;
+		        position: absolute;
+		        height: 68px;
+		        background-color: white;
+		        border: 1px solid #CCCCCC;
+		        /*height: 0px !important;*/
+		        transition: height 5s;
+		        /*overflow: hidden;*/
+		        /*box-sizing: border-box;*/
+		       /*padding-top: 0.5px;*/
+		         display: none;
+		     	/*visibility: hidden;*/
+		       /*height: 68px;*/
+			}
+			
+			 #banner_1[data-fixed="fixed"]{
+		        position: fixed;
+		        top: 0;
+		        left: 0;
+		        margin: 0;
+		        /*height: 680px !important;*/
+		        display: block;
+		       /*visibility: visible;*/
+		        
+		       	/*border-bottom: 1px solid red;*/
+		       	z-index: 11;
+		       	
+		    }

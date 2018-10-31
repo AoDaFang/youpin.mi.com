@@ -1,0 +1,160 @@
+#carousel_left{
+	width: 198px;
+	height: 323px;
+	background-color: #845f3f;
+	float: left;
+	position: relative;
+}
+li,ul,ol{
+	display: block;
+}
+.tui_jian_li:hover .tui_jian_li_none{
+	z-index: 999;
+	display: block;
+	
+}
+.tui_jian_li_block{
+	height: 32px;
+	width: 198px;
+	/*background-color: yellow;*/
+}
+.tui_jian_li_block:hover{
+	background-color: #684b34;
+}
+.tui_jian_li_none{
+	position: absolute;
+	width: 774px;
+	height: 322px;
+	background-color: white;
+	left: 198px;
+	top: 0px;
+	display: none;
+	overflow: scroll;
+}
+.carousel_p{
+	font-size: 12px;
+	color: white;
+}
+.carousel_p a{
+	text-decoration: none;
+	font-size: 12px;
+	color: white;
+	line-height: 32px;
+}
+.carousel_p a:nth-of-type(1){
+	margin-left: 27px;
+	margin-right: 4px;
+}
+.carousel_p a:nth-of-type(2){
+	margin-left: 4px;
+}
+.carousel_p a:hover{
+	color: #e4af82;
+}
+
+#tui_jian_ul{
+	height: 290px;
+	width: 198px;
+	/*background-color: purple;*/
+	margin-top: 16px;
+}
+
+.tui_jian_none_fenlei{
+	width: 720px;
+	/*height: 178px;*/
+	/*background-color: red;*/
+	/*margin-top: 21px;*/
+	margin-left: 30px;
+}
+#tui_jian_fenlei{
+	height: 178px;
+	margin-top: 21px;
+}
+#fenlei2{
+	height: 245px;
+	margin-top: 21px;
+}
+#fenlei3{
+	height: 178px;
+	margin-top: 50px;
+}
+#fenlei4{
+	height: 245px;
+	margin-top: 21px;
+}
+#fenlei5{
+	height: 245px;
+	margin-top: 50px;
+}
+#fenlei6{
+	height: 178px;
+	margin-top: 21px;
+}
+#fenlei7{
+	height: 178px;
+	margin-top: 50px;
+}
+#fenlei8{
+	height: 178px;
+	margin-top: 21px;
+}
+#fenlei9{
+	height: 178px;
+	margin-top: 50px;
+}
+#fenlei10{
+	height: 245px;
+	margin-top: 21px;
+}
+#fenlei11{
+	height: 245px;
+	margin-top: 50px;
+}
+#fenlei12{
+	height: 118px;
+	margin-top: 21px;
+}
+#fenlei13{
+	margin-top: 50px;
+	height: 70px;
+}
+#fenlei14{
+	height: 245px;
+	margin-top: 21px;
+}
+#fenlei15{
+	height: 245px;
+	margin-top: 21px;
+}
+#fenlei16{
+	height: 245px;
+	margin-top: 21px;
+}
+.tui_jian_none_fenlei b{
+	font-weight: normal;
+	font-size: 12px;
+}
+.er_ji_img_small{
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+}
+.fenlei_hang_p{
+	margin-left: 7px;
+	/*background-color: yellow;*/
+	display: block;
+	margin-bottom: 40px;
+}
+.cell{
+	display: inline-block;
+	margin-right: 50px;
+	width: 120px;
+}
+.cell span{
+	font-size: 12px;
+	margin-left: 16px;
+}
+.cell a{
+	text-decoration: none;
+	color: #626262;
+}
